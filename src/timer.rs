@@ -1,7 +1,7 @@
-#[cfg(not(any(target_arch = "mips", target_arch = "powerpc", target_arch = "xtensa")))]
-use std::sync::atomic::{AtomicBool,AtomicU64, Ordering};
 #[cfg(any(target_arch = "mips", target_arch = "powerpc", target_arch = "xtensa"))]
-use portable_atomic::{AtomicBool,AtomicU64, Ordering};
+use portable_atomic::{AtomicBool, AtomicU64, Ordering};
+#[cfg(not(any(target_arch = "mips", target_arch = "powerpc", target_arch = "xtensa")))]
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 
 use std::thread;
 use std::time::{Duration, Instant};
